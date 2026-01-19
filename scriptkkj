@@ -1,0 +1,172 @@
+
+-- feito por mim nob999
+-- usei rayfield ui
+
+-- ================= LOAD RAYFIELD =================
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+
+-- ================= LOADING FLOW =================
+Rayfield:Notify({
+	Title = "Inicializando",
+	Content = "Preparando ambiente...",
+	Duration = 2
+})
+
+task.wait(1.6)
+
+Rayfield:Notify({
+	Title = "Carregando",
+	Content = "Montando interface gráfica",
+	Duration = 2
+})
+
+task.wait(1.6)
+
+Rayfield:Notify({
+	Title = "Finalizando",
+	Content = "foder eb • made by nob999",
+	Duration = 2
+})
+
+task.wait(1.4)
+
+-- ================= WINDOW =================
+local Window = Rayfield:CreateWindow({
+	Name = "foder eb",
+	LoadingTitle = "foder eb",
+	LoadingSubtitle = "made by nob999  •  v1",
+	ConfigurationSaving = {
+		Enabled = false
+	},
+	KeySystem = false
+})
+
+-- ================= TAB =================
+local MainTab = Window:CreateTab("fuck the game", 4483362458)
+
+-- ================= SECTION =================
+MainTab:CreateSection("Funções principais")
+
+-- ================= BUTTONS =================
+MainTab:CreateButton({
+	Name = "💰 Dinheiro infinito",
+	Callback = function()
+		Rayfield:Notify({
+			Title = "Processando",
+			Content = "Puxando dinheiro, aguarde...",
+			Duration = 2
+		})
+
+		task.wait(2)
+
+		Rayfield:Notify({
+			Title = "Concluído",
+			Content = "Ação finalizada com sucesso",
+			Duration = 2
+		})
+
+		local args = {
+    -100000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+    "BuyMilitaryPass"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Events"):WaitForChild("Economy"):WaitForChild("DecrementMoney"):FireServer(unpack(args))
+	end
+})
+
+MainTab:CreateButton({
+	Name = "🌐 Foder dinheiro de geral",
+	Callback = function()
+		Rayfield:Notify({
+			Title = "Servidor",
+			Content = "Processando jogadores...",
+			Duration = 2
+		})
+
+		task.wait(2)
+
+		Rayfield:Notify({
+			Title = "Concluído",
+			Content = "Processo finalizado",
+			Duration = 2
+		})
+
+	 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local TransferRemote =
+    ReplicatedStorage
+    :WaitForChild("Modules")
+    :WaitForChild("Packages")
+    :WaitForChild("Knit")
+    :WaitForChild("Services")
+    :WaitForChild("EconomyService")
+    :WaitForChild("RE")
+    :WaitForChild("Transfer")
+
+local valor = "9999999999999999999" -- 10 mil
+local cooldown = 16   -- 15 segundos
+
+local function notify(titulo, texto)
+    StarterGui:SetCore("SendNotification", {
+        Title = titulo,
+        Text = texto,
+        Duration = 5
+    })
+end
+
+notify("foder dinheiro de geral", "dando dinheiro pra geral aguarde")
+
+for i, player in ipairs(Players:GetPlayers()) do
+    local args = {
+        player.Name,
+        valor
+    }
+
+    TransferRemote:FireServer(unpack(args))
+
+    notify(
+        "Transferência realizada ",
+        "Transferido "..valor.." para "..player.Name..
+        "\nAguarde "..cooldown.." segundos para o próximo..."
+    )
+
+    if i < #Players:GetPlayers() then
+        task.wait(cooldown)
+    end
+end
+
+notify("finalizado", "Todos os jogadores receberam o dinheiro dupado")
+
+	end
+})
+
+MainTab:CreateButton({
+	Name = "🔫 Puxar arma",
+	Callback = function()
+		Rayfield:Notify({
+			Title = "Item",
+			Content = "Solicitando item...",
+			Duration = 2
+		})
+
+		task.wait(2)
+
+		Rayfield:Notify({
+			Title = "Sucesso",
+			Content = "Item processado",
+			Duration = 2
+		})
+
+		local args = {
+    "M4A1"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ItemShopService"):WaitForChild("RF"):WaitForChild("BuyOrEquip"):InvokeServer(unpack(args))
+	end
+})
+
+-- ================= FOOTER =================
+MainTab:CreateParagraph({
+	Title = "foder eb",
+	Content = "Versão v1\nRayfield UI\nmade by nob999"
+})
